@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url(sarı.jpg) ;
+    background-size: 100% 100%;
+    height: 100vh;
+
+}
+
+.up-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 36px;
+    font-family: sans-serif;
+    margin-left: 30px;
+    color:rgb(210, 212, 148);
+    font-weight: bold;
+}
+
+.secenekler ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+}
+
+.secenekler ul li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    
+}
+
+.secenekler ul li a {
+    font-size: 20px;
+    color: rgb(133, 105, 160);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.secenekler ul li a:hover {
+    color: #ccd553;
+}
+
+.menü {
+    height: 200px;
+    width: 190px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+
+}
+
+.secenekler ul li:hover .menü {
+    display: block;
+}
+
+.menü ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menü ul li {
+    margin-bottom: 10px;
+
+}
+
+.menü ul li a {
+    color: rgb(133, 105, 160) ;
+    text-decoration: none;
+}
+.flash-message {
+  padding: 10px;
+}
+.success{
+    background-color:#43c529c8;
+    text-align: center;
+}
+.danger{
+    background-color: rgba(215, 76, 41, 0.79);
+    text-align: center;
+}

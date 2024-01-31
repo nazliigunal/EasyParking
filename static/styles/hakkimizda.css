@@ -1,0 +1,9 @@
+.down-container{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 50%;
+    margin-top: 100px;
+    width: 60%;
+    margin-left: 20%;
+    color: azure;
+    padding: 30px;
+}

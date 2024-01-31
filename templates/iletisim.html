@@ -1,0 +1,39 @@
+{%extends 'yardimci/base.html' %}
+{% from 'yardimci/form.html' import render_field %}
+{%block title%}
+İletişim
+{%endblock%}
+{%block link%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/iletisim.css') }}">
+{%endblock%}
+{%block body%}
+
+<div class="down-container">
+    <div class="formyap">
+        <h3>İLETİŞİM</h3>
+        
+        <form method=post>
+            <div class="form">
+                {{ render_field(form.ad) }}
+            </div>
+            <div class="form">
+                {{ render_field(form.soyad) }}
+            </div>
+            <div class="form">
+                {{ render_field(form.email) }}
+
+            </div>
+            <div class="form">
+                {{ render_field(form.mesaj) }}
+
+            </div>
+            
+            <div class="form">
+                <input type="submit" value="Gönder">
+            </div>
+         </form>   
+    </div>
+
+
+ </div>
+{%endblock%}

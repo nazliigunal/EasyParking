@@ -1,0 +1,29 @@
+{%extends 'yardimci/base.html' %}
+{% from 'yardimci/form.html' import render_field %}
+
+{%block title%}
+Giriş Yap
+{%endblock%}
+
+{%block link%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/girisyap.css') }}">
+{%endblock%}
+
+{%block body%}
+<div class="down-container">
+    <div class="formyap">
+        <h3>GİRİŞ YAP</h3>
+        <form method=post>
+            <div class="form">
+                {{ render_field(form.kullaniciadi) }}
+            </div>
+            <div class="form">
+                {{ render_field(form.sifre) }} 
+            </div>
+            <div class="form">
+                <input type="submit" value="Giriş Yap">
+            </div>
+         </form>   
+    </div>
+ </div>
+{%endblock%}

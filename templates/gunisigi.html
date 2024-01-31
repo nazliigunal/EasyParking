@@ -1,0 +1,34 @@
+{%extends 'yardimci/otopark.html'%}
+{%block title%}Günışığı Otopark{%endblock%}
+{%block logo%}Günışığı Otopark{%endblock%}
+{%block birsaat%}30TL{%endblock%}
+{%block ucsaat%}60TL{%endblock%}
+{%block bessaat%}80TL{%endblock%}
+{%block yedisaat%}100TL{%endblock%}
+{%block birgün%}300TL{%endblock%}
+
+{% block otopark %}
+<div class="A">
+            {% for i in range(1, 15) %}
+                {% set checkbox_id = "GA" + i|string %}
+                {% set park_yeri = "GA" + i|string %}
+                {% set arac = arac_data | selectattr('park_yeri', 'equalto', park_yeri) | first %}
+                <label class="checkBox">A{{ i }}
+                    <input type="checkbox" id="{{ checkbox_id }}" {% if arac and arac.plaka and arac.plaka != "0" %}checked{% endif %} disabled>
+                    <div class="transition"></div>
+                </label>
+            {% endfor %}
+        </div>
+
+        <div class="B">
+            {% for i in range(15, 29) %}
+                {% set checkbox_id = "GA" + i|string %}
+                {% set park_yeri = "GA" + i|string %}
+                {% set arac = arac_data | selectattr('park_yeri', 'equalto', park_yeri) | first %}
+                <label class="checkBox">A{{ i }}
+                    <input type="checkbox" id="{{ checkbox_id }}" {% if arac and arac.plaka and arac.plaka != "0" %}checked{% endif %} disabled>
+                    <div class="transition"></div>
+                </label>
+            {% endfor %}
+        </div>
+{%endblock otopark%} 

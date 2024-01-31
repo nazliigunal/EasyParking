@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {%endblock%} </title>
+    {%block link%}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/anasayfa.css') }}">{%endblock%}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/navbar.css') }}">
+
+</head>
+<body>
+
+    <div class="up-container">
+        <div class="logo">Easy Parking</div>
+        <div class="secenekler">
+          <nav>
+            <ul>
+            {% if session ["logged_in"]==True %}
+              <li><a href="/cikis.yap">Çıkış Yap</a></li>
+            {% else %}  
+              <li><a href="#">Otoparklar</a>
+                <div class="menü">
+                <ul>
+                    <li><a href="/olcay.otopark">Olcay Otopark</a></li>
+                    <li><a href="/nazli.otopark">Nazlı Otopark</a></li>
+                    <li><a href="/gunisigi.otopark">Günışığı Otopark</a></li>
+                    <li><a href="/kader.otopark">Kader Otopark</a></li>
+                    <li><a href="/kapali.otopark">Kapalı Otopark</a></li>
+                    <li><a href="/necatibey.otopark">Necatibey Otopark</a></li>
+                </ul>
+              </div>
+            </li>
+             <li><a href="/">Ana Sayfa</a></li>
+             <li><a href="/hakkimizda">Hakkımızda</a></li>
+             <li><a href="/iletisim">İletişim</a></li>
+             <li><a href="/giris.yap">Giriş Yap</a></li>
+            {% endif %} 
+           </ul>
+        </nav>
+        </div>
+     </div>
+     {%include "yardimci/message.html"%}
+     {% block body %}
+     <div class="down-container">
+        <div class="left-container">
+            <nav>
+              <ul>
+                <li><a href="#">OTOPARKLAR</a></li>
+                <li><a href="/olcay.otopark">Olcay Otopark</a></li>
+                <li><a href="/nazli.otopark">Nazlı Otopark</a></li>
+                <li><a href="/günisigi.otopark">Günışığı Otopark</a></li>
+                <li><a href="/kader.otopark">Kader Otopark</a></li>
+                <li><a href="/kapali.otopark">Kapalı Otopark</a></li>
+                <li><a href="/necatibey.otopark">Necatibey Otopark</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="right-container">
+          </div>
+     </div>
+     {% endblock%}
+</body>
+</html>
+

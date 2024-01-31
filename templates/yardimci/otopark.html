@@ -1,0 +1,103 @@
+{%extends 'yardimci/base.html' %}
+{% from 'yardimci/form.html' import render_field %}
+
+
+{%block link%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/otopark.css') }}">
+{%endblock%}
+
+
+{%block body %}
+ <div class="down-container">
+    <div class="left-container">
+            <div class="oto-logo">{%block logo%} Olcay Otopark {%endblock%} </div>
+            <div class="fiyat">
+                <table>
+                    <tr>
+                      <th>Saat</th>
+                      <th>Fiyat</th>
+                    </tr>
+                    <tr>
+                      <td>1 Saat</td>
+                      <td>{%block birsaat%}20TL{%endblock%}</td>
+                    </tr>
+                    <tr>
+                      <td>1-3 Saat</td>
+                      <td>{%block ucsaat%}50TL{%endblock%}</td>
+                    </tr>
+                    <tr>
+                        <td>3-5 Saat</td>
+                        <td>{%block bessaat%}70TL{%endblock%}</td>
+                      </tr>
+                      <tr>
+                        <td>5-7 Saat</td>
+                        <td>{%block yedisaat%}100TL{%endblock%}</td>
+                      </tr>
+                      <tr>
+                        <td>1 Gün</td>
+                        <td>{%block birgün%}180TL{%endblock%}</td>
+                      </tr>
+                  </table>
+            </div>
+        </div>
+      <div class="right-container">
+      <div class="otopark">
+{% block otopark %}
+
+{%endblock otopark%}   
+           </div>
+          <div class="bilgilendirme">
+            <div class="boş-park">
+              <div class="boş"></div>
+              <h5>  : boş park yeri</h5>
+            </div>
+            <div class="dolu-park">
+              <div class="dolu"></div>
+              <h5>  : dolu park yeri</h5>
+            </div>
+        </div>
+  
+  {% if session["logged_in"] == True %}
+  <div class="formyap">
+    <form method="post" >
+        <div class="form">
+            {{ render_field(form.parkyeri) }}
+        </div>
+        <div class="form">
+            {{ render_field(form.plaka) }}
+        </div>
+        <div class="form">
+            <div class="buton1">
+                <input type="submit" name="giris" value="Giriş Yap">
+            </div>
+        </div>
+        <div class="form">
+            <div class="buton2">
+                <input type="submit" name="cikis" value="Çıkış Yap">
+            </div>
+        </div>
+    </form>
+    <div id="ucretCikti" style="display: none;">
+     {% if  session["ücret"] is not none  %}
+        Ücret: <span id="ucretSpan">{{ session["ücret"] }}</span>
+     {% endif %}
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var ucretSpan = document.getElementById("ucretSpan");
+    if (ucretSpan) {
+        var ucret = ucretSpan.textContent;
+        if (ucret) {
+            alert("Ücret: " + ucret + " TL");
+        }
+    }
+    });
+   </script>
+   </div>
+   {% endif %}
+</div>
+</div>
+    
+
+
+{%endblock body%}

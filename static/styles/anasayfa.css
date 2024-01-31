@@ -1,0 +1,31 @@
+.down-container{
+    
+    width: 30%;
+    height: 100%;
+    text-decoration: none;
+    margin-top:-17px;
+}
+.left-container ul li {
+    margin-right: 30px;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    list-style-type:none;
+    text-decoration: none;
+    padding: 20px;
+    background-color:rgba(0, 0, 0, 0.7) ;
+    margin-left: -40px;
+    text-align: center;
+
+}
+.left-container ul li a{
+    color: rgb(133, 105, 160);
+    text-decoration: none;
+
+}
+.left-container ul :hover{
+    background-color: #a6ae73;
+    transition: 0.5s;
+}
+.left-container ul li:nth-child(1){
+    background-color: #ccd553;
+}
